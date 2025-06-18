@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TONTEXPRESS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      background: url('https://images.pexels.com/photos/7174/summer-grass.jpg') center center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    header h1,
+    header p,
+    header a {
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .call-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Accueil -->
+<header>
+  <div class="container">
+    <h1 class="display-4">TONTEXPRESS</h1>
+    <p class="lead">Toujours là, toujours prêt, toujours efficace!</p>
+    <a href="#services" class="btn btn-success btn-lg">Voir nos services</a>
+  </div>
+</header>
+
+<!-- Services -->
+<section id="services" class="section bg-light">
+  <div class="container">
+    <h2 class="mb-4">Nos Services</h2>
+    <p><strong><i class="bi bi-scissors"></i> Tonte de pelouse :</strong> La base de l'entretien, assurant une hauteur de coupe uniforme.</p>
+    <p><strong><i class="bi bi-border-style"></i> Coupe des bordures :</strong> Créer des lignes nettes le long des allées, patios, et autres bordures.</p>
+    <p><strong><i class="bi bi-broom"></i> Nettoyage des débris :</strong> Éliminer les tontes de gazon et autres débris pour un aspect propre.</p>
+    <p><strong><i class="bi bi-calendar2-check"></i> Nettoyage de printemps et d'automne :</strong> Préparer le terrain pour la saison et retirer les feuilles mortes.</p>
+  </div>
+</section>
+
+<!-- Demande de soumission -->
+<section id="soumission" class="section bg-light">
+  <div class="container">
+    <h2 class="mb-4">Demande de soumission</h2>
+    <form id="soumissionForm" action="https://formspree.io/f/movwwodk" method="POST">
+    
+    <div class="mb-3">
+        <label for="Name" class="form-label">Prénom</label>
+        <input type="text" class="form-control" id="Name" name="Name" required autocomplete="Name" />
+      </div>
+      
+      <div class="mb-3">
+        <label for="Lastname" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="Lastname" name="Lastname" required autocomplete="Lastname" />
+      </div>
+      
+      <div class="mb-3">
+        <label for="adresse" class="form-label">Adresse du terrain</label>
+        <input type="text" class="form-control" id="adresse" name="adresse" required autocomplete="street-address" />
+      </div>
+      
+      <div class="mb-3">
+        <label for="taille" class="form-label">Grandeur du terrain (en pieds carrés) (optionnel)</label>
+        <input type="number" class="form-control" id="taille" name="taille" required autocomplete="off" />
+      </div>
+            
+            <div class="mb-3">
+        <label for="telephone" class="form-label">Numéro de téléphone</label>
+        <input type="tel" class="form-control" id="telephone" name="telephone" autocomplete="tel" />
+      </div>
+               
+        <div class="mb-3">
+        <label for="courriel" class="form-label">Adresse courriel (optionnel)</label>
+        <input type="email" class="form-control" id="courriel" name="courriel" required autocomplete="email" />
+      </div>
+
+      <div class="mb-3">
+       <label class="form-label">Travail souhaité</label><br/>
+        <input type="checkbox" id="tonte" name="services[]" value="Tonte de pelouse" />
+        <label for="tonte">Tonte de pelouse</label><br/>
+
+        <input type="checkbox" id="bordure" name="services[]" value="Coupe des bordures" />
+        <label for="bordure">Coupe des bordures</label><br/>
+
+        <input type="checkbox" id="nettoyage-debris" name="services[]" value="Nettoyage des débris" />
+        <label for="nettoyage-debris">Nettoyage des débris</label><br/>
+
+        <input type="checkbox" id="nettoyage-saisonnier" name="services[]" value="Nettoyage de printemps et d'automne" />
+        <label for="nettoyage-saisonnier">Nettoyage de printemps et d'automne</label><br/>
+
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Demande spéciale</label>
+        <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn" class="btn btn-success">Envoyer</button>
+    </form>
+
+
+    <!-- Checkmark animé -->
+    <div id="checkmark" style="display:none; margin-top:20px; font-size:48px; color:green; text-align:center;">
+      ✓
+    </div>
+  </div>
+</section>
+
+<!-- À propos -->
+<section id="apropos" class="section">
+  <div class="container">
+    <h2 class="mb-4">À propos de nous</h2>
+    <p>Nous sommes Maxym et Nathan, deux jeunes entrepreneurs passionnés qui ont fondé TonteXpress avec pour mission d’offrir à chacun une pelouse saine, propre et bien entretenue.</p>
+    <p>Ce qui nous distingue :</p>
+    <ul>
+      <li>Rapidité et efficacité au cœur de notre engagement.</li>
+      <li> Un service client attentif, dédié à répondre précisément à vos besoins.</li>
+      <li>Des prix abordables pour tous</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section bg-light">
+  <div class="container">
+    <h2 class="mb-4">Contactez-nous</h2>
+    <p>📞 450-820-6966<br/>
+       ✉️ <a href="mailto:desalliers.max@icloud.com">desalliers.max@icloud.com</a><br/>
+       📍 Service à domicile – tous les jours de 8h à 18h
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 TONTEXPRESS – Tous droits réservés</p>
+</footer>
+
+<a href="tel:4508206966" class="btn btn-success call-button">📞 Appeler</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const form = document.getElementById('soumissionForm');
+  const checkmark = document.getElementById('checkmark');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        checkmark.style.display = 'block';
+        checkmark.style.opacity = 0;
+        let opacity = 0;
+        let fadeIn = setInterval(() => {
+          opacity += 0.05;
+          checkmark.style.opacity = opacity;
+          if (opacity >= 1) clearInterval(fadeIn);
+        }, 30);
+
+        setTimeout(() => {
+          window.location.href = '#top';
+        }, 3000);
+      } else {
+        alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+        submitBtn.disabled = false;
+      }
+    }).catch(() => {
+      alert('Erreur réseau. Veuillez vérifier votre connexion.');
+      submitBtn.disabled = false;
+    });
+  });
+</script>
+
+</body>
+</html>
+
